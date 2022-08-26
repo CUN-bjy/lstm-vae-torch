@@ -12,7 +12,7 @@ from torch.utils.tensorboard import SummaryWriter
 from torchvision import transforms
 from tqdm import tqdm
 
-from models import LSTMAE, LSTMVAE
+from src.models import LSTMAE, LSTMVAE
 from utils.MovingMNIST import MovingMNIST
 
 writer = SummaryWriter()
