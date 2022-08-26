@@ -1,0 +1,6 @@
+torch==1.12.1
+matplotlib==3.5.3
+torchvision==0.13.1
+tensorboard==2.10.0
+easydict==1.9
+tqdm==4.64
