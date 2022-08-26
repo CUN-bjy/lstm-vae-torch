@@ -1,5 +1,5 @@
 # lstm-vae-torch
-A simple implement of lstm-based variational autoencoder
+A Simple Pytorch Implement of LSTM-based Variational Autoencoder(VAE)
 
 ## Environment Setup
 ```bash
