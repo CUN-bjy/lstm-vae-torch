@@ -106,10 +106,16 @@ class LSTMVAE(nn.Module):
         logvar = self.fc22(enc_h)
         z = self.reparametize(mean, logvar)  # batch_size x latent_size
 
+        # initialize hidden state as inputs
+        h_ = self.fc3(z)
+        
         # decode latent space to input space
         z = z.repeat(1, seq_len, 1)
         z = z.view(batch_size, seq_len, self.latent_size).to(self.device)
-        reconstruct_output, hidden = self.lstm_dec(z, enc_hidden)
+
+        # initialize hidden state
+        hidden = (h_.contiguous(), h_.contiguous())
+        reconstruct_output, hidden = self.lstm_dec(z, hidden)
 
         x_hat = reconstruct_output
 
